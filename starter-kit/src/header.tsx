@@ -11,8 +11,8 @@ function Header() {
   }, []);
 
   return (
-    <header className="mb-8 p-4 bg-pink-100 rounded-2xl shadow-sm">
-      <h1 className="text-3xl font-bold text-slate-800">あさナビ（開発中）</h1>
+    <header className="mb-8 p-4 bg-[#283655] rounded-2xl shadow-sm">
+      <h1 className="text-3xl text-[#D0E1F9] font-bold text-slate-800">あさナビ</h1>
       <p className="text-slate-500 flex items-center gap-2">
         <Clock size={18} />
         {time.toLocaleTimeString()}
