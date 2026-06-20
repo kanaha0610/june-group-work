@@ -24,7 +24,7 @@ function App() {
         <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold text-lg flex items-center gap-2">
-              <Cloud className="text-amber-500" /> Weather
+              <Sun className="text-amber-500" /> Weather
             </h2>
           </div>
           <div className="text-center py-4">
