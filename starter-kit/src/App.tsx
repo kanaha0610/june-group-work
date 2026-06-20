@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="min-h-screen p-4 md:p-8">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-800">Good Morning!</h1>
+        <h1 className="text-3xl font-bold text-slate-800">あさナビ。</h1>
         <p className="text-slate-500 flex items-center gap-2">
           <Clock size={18} />
           {time.toLocaleTimeString()}
