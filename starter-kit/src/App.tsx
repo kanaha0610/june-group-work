@@ -1,23 +1,13 @@
 import React from 'react';
-import { Sun, Cloud, Newspaper, CheckCircle, Clock } from 'lucide-react';
+import Header from './Header'; //
+import { Sun, Cloud, Newspaper, CheckCircle, } from 'lucide-react';
 
 function App() {
-  const [time, setTime] = React.useState(new Date());
-
-  React.useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+  
 
   return (
     <div className="min-h-screen p-4 md:p-8">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-800">あさナビ。</h1>
-        <p className="text-slate-500 flex items-center gap-2">
-          <Clock size={18} />
-          {time.toLocaleTimeString()}
-        </p>
-      </header>
+     <Header />
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Weather Widget Placeholder */}
