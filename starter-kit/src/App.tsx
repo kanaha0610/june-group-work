@@ -29,7 +29,7 @@ function App() {
           </div>
           <div className="text-center py-4">
             <div className="text-4xl font-bold mb-1">24°C</div>
-            <p className="text-slate-500">Sunny Day</p>
+            <p className="text-slate-500">Cloudy Day</p>
           </div>
         </section>
 
