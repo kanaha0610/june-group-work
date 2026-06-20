@@ -7,7 +7,7 @@ function Weather() {
 useEffect(() => {
   const fetchWeather = async () => {
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=YOUR_API_KEY&units=metric&lang=ja`
+      `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=85c9945595f7c1d952faa30c6ece575e&units=metric&lang=ja`
     );
     const data = await res.json();
     setWeather(data);
@@ -31,12 +31,10 @@ const getIcon = (main:string) => {
 };
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {/* Weather Widget Placeholder */}
       <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
         <div className="flex justify-between items-center mb-4">
           <h2 className="font-semibold text-lg flex items-center gap-2">
-              {weather ? getIcon(weather.weather[0].main) : <Cloud className="text-gray-400" />}
+              {weather && weather.weather ? getIcon(weather.weather[0].main) : <Cloud className="text-gray-400" />}
               Weather
             </h2>
           </div>
@@ -49,7 +47,6 @@ const getIcon = (main:string) => {
             </p>
           </div>
         </section>
-      </main>
     );
 }
 export default Weather;

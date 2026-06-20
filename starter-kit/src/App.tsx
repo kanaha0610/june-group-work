@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header'; //
 import { Sun, Cloud, Newspaper, CheckCircle, } from 'lucide-react';
+import Weather from "./weather";
 
 function App() {
   
@@ -10,18 +11,8 @@ function App() {
      <Header />
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Weather Widget Placeholder */}
-        <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="font-semibold text-lg flex items-center gap-2">
-              <Cloud className="text-amber-500" /> Weather
-            </h2>
-          </div>
-          <div className="text-center py-4">
-            <div className="text-4xl font-bold mb-1">24°C</div>
-            <p className="text-slate-500">Cloudy Day</p>
-          </div>
-        </section>
+        <Weather />
+        
 
         {/* News Widget Placeholder */}
         <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
