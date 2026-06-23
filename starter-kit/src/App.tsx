@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
 import WeatherWidget from './components/WeatherWidget';
-import NewsWidget from './components/NewsWidget';
-import TasksWidget from './components/TasksWidget';
+import FortunesWidget from './components/FortunesWidget';
+import ClothesWidget from './components/ClothesWidget';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
@@ -18,8 +18,8 @@ function App() {
 
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <WeatherWidget />
-        <NewsWidget />
-        <TasksWidget />
+        <ClothesWidget />
+        <FortunesWidget />
       </main>
 
       <footer className="mt-12 text-center text-slate-400 text-xs">
