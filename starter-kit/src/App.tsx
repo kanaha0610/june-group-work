@@ -5,8 +5,8 @@ import FortunesWidget from './components/FortunesWidget';
 import ClothesWidget from './components/ClothesWidget';
 
 function App() {
+  const time=new Date();
   
-
   return (
     <div className="min-h-screen p-4 md:p-8">
       <Header time={time} />
