@@ -40,7 +40,7 @@ const getIcon = (main:string) => {
           </div>
           <div className="text-center py-4">
             <div className="text-4xl font-bold mb-1">
-                {weather ? `${weather.main.temp}℃` : "Loading..."}
+                {weather ? `${weather.main.temp.toFixed(1)}℃` : "Loading..."}
             </div>
             <p className="text-slate-500">
                 {weather ? weather.weather[0].description : ""}
