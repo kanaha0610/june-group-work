@@ -47,7 +47,11 @@ export default function CosmeticWidget() {
     };
 
     if (isLoading) {
-        return <p className="text-slate-400 animate-pulse">Loading...</p>;
+        return (
+            <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center text-slate-500">
+                天気を読み込み中...
+                </section>
+        )
     }
     
     const cosmetics = getRecommendedCosmetics();
@@ -60,7 +64,7 @@ export default function CosmeticWidget() {
                 {cosmetics.map((img) => (
                     <img
                         key={img}
-                        src={`/images/${img}`}
+                        src={new URL(`../components/images_CosmeticWidget/${img}`, import.meta.url).href}
                         alt={img}
                         className="w-20 h-20 object-contain"
                     />
