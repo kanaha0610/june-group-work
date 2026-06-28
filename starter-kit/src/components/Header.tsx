@@ -15,7 +15,7 @@ function Header({ time }: HeaderProps) {
         </div>
      </div>
       <p className="text-slate-500 flex items-center gap-2">
-        <Clock size={18} />
+        <Clock size={30} />
         {time.toLocaleTimeString()}
       </p>
     </header>
