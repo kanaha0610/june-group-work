@@ -3,6 +3,7 @@ import Header from './components/Header';
 import WeatherWidget from './components/WeatherWidget';
 import FortunesWidget from './components/FortunesWidget';
 import ClothesWidget from './components/ClothesWidget';
+import CosmeticWidget from './components/CosmeticWidget';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
@@ -20,6 +21,7 @@ function App() {
         <WeatherWidget />
         <ClothesWidget />
         <FortunesWidget />
+        <CosmeticWidget />
       </main>
 
       <footer className="mt-12 text-center text-slate-400 text-xs">
