@@ -1,6 +1,3 @@
-
-
-//デフォルトのコードは以下のとおりです。
 import { CheckCircle } from 'lucide-react';
 
 function FortunesWidget() {
@@ -21,4 +18,3 @@ function FortunesWidget() {
   );
 }
 
-export default FortunesWidget;
