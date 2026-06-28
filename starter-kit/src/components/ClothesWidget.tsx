@@ -80,7 +80,7 @@ function ClothesWidget() {
       {/* ヘッダー部分 */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="font-semibold text-lg flex items-center gap-2 text-slate-800">
-          <span>👕</span> 今日のコーディネート
+          <span>👕</span> 💙今日のコーディネート💙
         </h2>
         <span className="text-sm font-medium px-2 py-1 bg-slate-100 text-slate-600 rounded-md">
           {CITY}: {weatherData ? Math.round(weatherData.temp) + '°C' : '--°C'}
