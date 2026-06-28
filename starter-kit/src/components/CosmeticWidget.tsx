@@ -7,13 +7,14 @@ export default function CosmeticWidget() {
     const [ isLoading, setIsLoading ] = useState(true);
 
     useEffect(() => {
-        fetch(`https://api.weatherapi.com/v1/current.json?key=a07002e8d3fe445eb7b141328262706&q=Tokyo&lang=ja`)
+        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+        fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Tokyo&lang=ja`)
             .then(res => res.json())
             .then(data => {
                 setHumidity(data.current.humidity);
-                setUvIndex(data.current.uvIndex);
+                setUvIndex(data.current.uv);
                 setIsLoading(false);
-      });
+            });
     }, []);
 
     // おすすめコスメを決める
@@ -49,8 +50,9 @@ export default function CosmeticWidget() {
     if (isLoading) {
         return (
             <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center text-slate-500">
-                天気を読み込み中...
-                </section>
+                <h3 className="font-bold text-lg mb-2">Cosmetics picked for you</h3>
+                <p>天気を読み込み中...</p>
+            </section>
         )
     }
     
@@ -64,7 +66,7 @@ export default function CosmeticWidget() {
                 {cosmetics.map((img) => (
                     <img
                         key={img}
-                        src={new URL(`../components/images_CosmeticWidget/${img}`, import.meta.url).href}
+                        src={new URL(`./images_CosmeticWidget/${img}`, import.meta.url).href}
                         alt={img}
                         className="w-20 h-20 object-contain"
                     />
