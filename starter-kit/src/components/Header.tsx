@@ -12,6 +12,9 @@ function Header({ time }: HeaderProps) {
      <div className="flex items-center gap-4">
       <div className="flex items-center justify-center">
           <img src={logoimage} alt="Logo" className="h-12 w-auto object-contain" /> 
+          <p className="text-[10px] text-slate-400 font-medium mt-1 tracking-wider pl-1">
+            あさ忙しいあなたのために
+          </p>
         </div>
      </div>
       <p className="text-slate-500 flex items-center gap-2">
