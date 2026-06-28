@@ -28,32 +28,32 @@ function ClothesWidget() {
           if (main.includes("rain") || main.includes("snow")) {
             //雨・雪など
           if (temp >= 20) {
-            clothesText = "半そでか長そでシャツ（雨と雪対策で傘は必須！）";
-            imagePath = "images.outfit_summer_rain.jpg";
+            clothesText = `半そでか長そでシャツ\n雨対策で傘は必須！`;
+            imagePath = new URL('./images.outfit_summer_rain.jpg', import.meta.url).href;
           } else if (temp >= 10 && temp < 20) {
-            clothesText = "パーカー（雨と雪対策で傘は必須！）";
-            imagePath = "images.outfit_spring_rain.jpg";
+            clothesText = "パーカー\n雨対策で傘は必須！";
+            imagePath = new URL('./images.outfit_spring_rain.jpg', import.meta.url).href;
           } else {
-            clothesText = "ダウンジャケット、防水靴、マフラー（雨と雪対策で傘は必須！）";
-            imagePath = "images.outfit_winter_rain.jpg";
+            clothesText = "ダウンジャケット、防水靴、マフラー\n傘は必須！";
+            imagePath = new URL('./images.outfit_winter_rain.jpg', import.meta.url).href;
           }
         } else {
           // 晴れ・曇りなど
           if (temp >= 25) {
             clothesText = "半そでまたはノースリーブ、サンダル";
-            imagePath = "images.outfit_25deg_up.jpg";
+            imagePath = new URL('./images.outfit_25deg_up.jpg', import.meta.url).href;
           } else if (temp >= 20 && temp < 25) {
             clothesText = "長そでシャツ、カーディガン";
-            imagePath = "images.outfit_20_24deg.jpg";
+            imagePath = new URL('./images.outfit_20_24deg.jpg', import.meta.url).href;
           } else if (temp >= 15 && temp < 20) {
             clothesText = "薄手ニット、ジャケット、スウェット";
-            imagePath = "images.outfit_15_20deg.jpg";
+            imagePath = new URL('./images.outfit_15_20deg.jpg', import.meta.url).href;
           } else if (temp >= 10 && temp < 15) {
             clothesText = "トレンチコート、厚手ニット";
-            imagePath = "images.outfit_10_14deg.jpg";
+            imagePath = new URL('./images.outfit_10_14deg.jpg', import.meta.url).href;
           } else {
             clothesText = "ダウンジャケット、チェスターコート、マフラー";
-            imagePath = "outfit_9deg_under.jpg";
+            imagePath = new URL('./images.outfit_9deg_under.jpg', import.meta.url).href;
           }
         }
 
@@ -95,7 +95,7 @@ function ClothesWidget() {
             <img 
               src={outfit.image} 
               alt="本日の服装" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onError={(e) => {
                 // 画像が読み込めなかった場合のフォールバック
                 (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=No+Image';
@@ -106,7 +106,7 @@ function ClothesWidget() {
         
         <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
           <p className="text-xs text-slate-400 font-medium mb-1">RECOMMENDED OUTFIT</p>
-          <p className="text-slate-700 font-semibold">{outfit.text}</p>
+          <p className="text-slate-700 font-semibold whitespace-pre-line">{outfit.text}</p>
         </div>
       </div>
     </section>
