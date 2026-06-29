@@ -5,43 +5,50 @@ export default function CosmeticWidget() {
     const [ humidity, setHumidity ] = useState(0);
     const [ uvIndex, setUvIndex ] = useState(0);
     const [ isLoading, setIsLoading ] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
         fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Tokyo&lang=ja`)
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error("データの取得に失敗しました");
+                return res.json();
+            })
             .then(data => {
                 setHumidity(data.current.humidity);
                 setUvIndex(data.current.uv);
                 setIsLoading(false);
-            });
+            })
+            .catch(err => setError(err.message)); // 👈 エラーを捕まえて状態に保存
     }, []);
+
+    if (error) return <p className="text-red-500 font-bold">🚨 {error}</p>;
 
     // おすすめコスメを決める
     const getRecommendedCosmetics = () => {
-        const items: string[] = [];
+        const items: { file: string; label: string }[] = [];
 
         // 下地・日焼け止め
         if (humidity < 50 && uvIndex < 3) {
-            items.push('foundationA.png');
+            items.push({ file: 'foundationA.png', label: '下地' });
         } else if (humidity < 50 && uvIndex >= 3) {
-            items.push('foundationA.png');
-            items.push('sunscreen.png');
+            items.push({ file: 'foundationA.png', label: '下地' });
+            items.push({ file: 'sunscreen.png', label: '日焼け止め' });
         } else if (humidity >= 50 && uvIndex < 3) {
-            items.push('foundationB.png');
+            items.push({ file: 'foundationB.png', label: '下地' });
         } else {
-            items.push('foundationB.png');
-            items.push('sunscreen.png');
+            items.push({ file: 'foundationB.png', label: '下地' });
+            items.push({ file: 'sunscreen.png', label: '日焼け止め' });
         }
 
         // パウダー
         if (humidity >= 60) {
-            items.push('powder.png');
+            items.push({ file: 'powder.png', label: 'パウダー' });
         }
 
         // ミスト
         if (humidity < 40) {
-            items.push('mist.png');
+            items.push({ file: 'mist.png', label: 'ミスト' });
         }
 
         return items;
@@ -63,13 +70,16 @@ export default function CosmeticWidget() {
             <h3 className="font-bold text-lg mb-2">Cosmetics picked for you</h3>
             <p className="text-slate-400 text-sm mb-4">湿度 {humidity}% / UV {uvIndex}</p>
             <div className="flex flex-row gap-4">
-                {cosmetics.map((img) => (
+                {cosmetics.map((item) => (
+                    <div>
+                    <p className="text-slate-400 text-sm mb-4">{item.label}</p>
                     <img
-                        key={img}
-                        src={new URL(`./images_CosmeticWidget/${img}`, import.meta.url).href}
-                        alt={img}
+                        key={item.file}
+                        src={new URL(`./images_CosmeticWidget/${item.file}`, import.meta.url).href}
+                        alt={item.label}
                         className="w-20 h-20 object-contain"
                     />
+                    </div>
                 ))}
             </div>
         </div>
