@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // 余り（0〜9）に対応する10パターンのデータ
 const FORTUNE_MAPPING = {
-  0: { color: "スノーホワイト", item: "新しい歯ブラシ" },
-  1: { color: "スカイブルー", item: "昨日カバンに入れたレシート" },
-  2: { color: "レモンイエロー", item: "お気に入りの靴" },
-  3: { color: "ビビッドピンク", item: "コンビニの新作スイーツ" },
-  4: { color: "フォレストグリーン", item: "温かい飲み物" },
-  5: { color: "クラシックネイビー", item: "いつもと違う道" },
-  6: { color: "ほっこりベージュ", item: "お気に入りのペン" },
-  7: { color: "ラベンダーパープル", item: "お守り代わりのリップ" },
-  8: { color: "ビターブラウン", item: "ミントタブレット" },
-  9: { color: "サンセットオレンジ", item: "スマホのクリーニングクロス" }
+  0: { color: "スノーホワイト🤍", item: "新しい歯ブラシ" },
+  1: { color: "スカイブルー🩵", item: "昨日カバンに入れたレシート" },
+  2: { color: "レモンイエロー🍋", item: "お気に入りの靴" },
+  3: { color: "ビビッドピンク💗", item: "コンビニの新作スイーツ" },
+  4: { color: "フォレストグリーン🌲", item: "温かい飲み物" },
+  5: { color: "シルバー🪩", item: "いつもと違う道" },
+  6: { color: "ほっこりベージュ🧸", item: "お気に入りのペン" },
+  7: { color: "ラベンダー🪻", item: "お守り代わりのリップ" },
+  8: { color: "ビターブラウン🤎", item: "ミントタブレット" },
+  9: { color: "サンセットオレンジ🍊", item: "スマホのクリーニングクロス" }
 };
 
 export default function FortuneWidget() {
@@ -61,11 +61,12 @@ export default function FortuneWidget() {
     <div style={{
       padding: '20px', 
       textAlign: 'left', 
-      fontFamily: "'Hiragino Kaku Gothic ProN', sans-serif",
+      fontFamily: 'Zen Maru Gothic, sans-serif',
+      fontWeight: 'bold',
       backgroundColor: '#fff',
       borderRadius: '12px',
     }}>
-      <h2 style={{ margin: 0, color: '#555' }}>🔮 今日の運勢 🔮</h2>
+      <h3 className="font-bold text-lg mb-2">🔮 今日の運勢 🔮</h3>
       
       {loading ? (
         <p style={{ color: '#888' }}>今日の運勢を占っています...</p>
@@ -73,11 +74,11 @@ export default function FortuneWidget() {
         <div>
           <p className="text-slate-400 text-sm mb-4">
             ラッキーカラー:<br />
-            <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#333' }}>{fortune.color}</span>
+            <span style={{ fontWeight: 'semibold', fontSize: '1.2rem', color: '#333' }}>{fortune.color}</span>
           </p>
           <p className="text-slate-400 text-sm mb-4">
             ラッキーアイテム:<br />
-            <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: '#333' }}>{fortune.item}</span>
+            <span style={{ fontWeight: 'semibold', fontSize: '1.2rem', color: '#333' }}>{fortune.item}</span>
           </p>
         </div>
       )}
