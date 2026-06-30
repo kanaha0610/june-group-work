@@ -72,15 +72,21 @@ export default function FortuneWidget() {
         <p style={{ color: '#888' }}>今日の運勢を占っています...</p>
       ) : (
         <div>
-          <p className="text-slate-400 text-sm mb-4">
-            ラッキーカラー:<br />
-            <span style={{ fontWeight: 'semibold', fontSize: '1.2rem', color: '#333' }}>{fortune.color}</span>
+          <p className="text-slate-400 text-xs mb-1" style={{ color: '#8a7e72' }}>
+            ラッキーカラー
           </p>
-          <p className="text-slate-400 text-sm mb-4">
-            ラッキーアイテム:<br />
-            <span style={{ fontWeight: 'semibold', fontSize: '1.2rem', color: '#333' }}>{fortune.item}</span>
+          <p style={{ fontWeight: '900', fontSize: '1.3rem', color: '#4a3c31', marginTop: '2px', marginBottom: '12px' }}>
+          {fortune.color}
+          </p>
+
+          <p className="text-slate-400 text-xs mb-1" style={{ color: '#8a7e72' }}>
+            ラッキーアイテム
+          </p>
+          <p style={{ fontWeight: '900', fontSize: '1.3rem', color: '#4a3c31', marginTop: '2px' }}>
+          {fortune.item}
           </p>
         </div>
+        
       )}
     </div>
   );
