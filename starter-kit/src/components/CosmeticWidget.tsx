@@ -67,7 +67,10 @@ export default function CosmeticWidget() {
 
     return (
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <h3 className="font-bold text-lg mb-2">Cosmetics picked for you</h3>
+            <h3 className="font-bold text-lg mb-2">
+                <span>💄</span>
+                今日のベースメイク
+            </h3>
             <p className="text-slate-400 text-sm mb-4">湿度 {humidity}% / UV {uvIndex}</p>
             <div className="flex flex-row gap-4">
                 {cosmetics.map((item) => (
