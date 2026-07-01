@@ -18,6 +18,9 @@ function Header({ time }: HeaderProps) {
         >
           <img src={logoimage} alt="Logo" className="h-12 w-auto object-contain" /> 
           </button>
+          <p className="text-[10px] text-slate-400 font-medium mt-1 tracking-wider pl-1">
+            あさ忙しいあなたのために
+          </p>
         </div>
      </div>
       <p className="text-slate-500 flex items-center gap-2">
