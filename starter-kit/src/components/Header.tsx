@@ -18,14 +18,14 @@ function Header({ time }: HeaderProps) {
         >
           <img src={logoimage} alt="Logo" className="h-12 w-auto object-contain" /> 
           </button>
-          <p className="text-[10px] text-slate-400 font-medium mt-1 tracking-wider pl-1">
-            あさ忙しいあなたのために
+          <p className="text-[13px] text-slate-400 font-medium mt-1 tracking-wider pl-1">
+            ―あさ忙しいあなたのために―
           </p>
         </div>
      </div>
-      <p className="text-slate-500 flex items-center gap-2">
-        <Clock size={30} />
-        {time.toLocaleTimeString()}
+      <p className="text-slate-700 text-2xl font-bold flex items-center gap-2">
+        <Clock size={20} color="#283655" strokeWidth={3}/>
+        {time.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit'})}
       </p>
     </header>
   );
